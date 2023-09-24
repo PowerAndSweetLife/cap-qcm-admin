@@ -59,7 +59,10 @@ class Utilisateur extends CI_Controller
         $data = array(
             "attache" => $this->utilisateur->getUtilisateurByType("attache_admin"),
             "agent_fipu" => $this->utilisateur->getUtilisateurByType("fipu"),
-
+            "agent_fipu_compte" => $this->utilisateur->getFiPuUsers() ,
+            "attache_compte" => $this->utilisateur->getAttacheUsers() ,
+            "agent_fipu_connexion" => $this->utilisateur->getFiPuUsersConnexion() ,
+            "attache_connexion" => $this->utilisateur->getAttacheUsersConnexion() ,
         );
 
         $this->load->view("admin/overview", $data);
@@ -73,5 +76,25 @@ class Utilisateur extends CI_Controller
             'utilisateur' => $this->utilisateur->showAllUtilisateur(),
             'success' => true,
         ));
+    }
+
+    public function getCompteCree() {
+        $date1 = $this->input->post('date1') ;
+        $date2 = $this->input->post('date2') ;
+        // var_dump($date1) ;
+        // var_dump($date2) ;
+        $resultat1 = $this->utilisateur->getFiPuUsers($date1,$date2) ;
+        $resultat2 = $this->utilisateur->getAttacheUsers($date1,$date2) ;
+        echo json_encode(["total" => (count($resultat1) + count($resultat2)), "resultat1" => count($resultat1), "resultat2" => count($resultat2)]) ;
+    }
+
+    public function getCompteConnexion() {
+        $date1 = $this->input->post('date1') ;
+        $date2 = $this->input->post('date2') ;
+        // var_dump($date1) ;
+        // var_dump($date2) ;
+        $resultat1 = $this->utilisateur->getFiPuUsersConnexion($date1,$date2) ;
+        $resultat2 = $this->utilisateur->getAttacheUsersConnexion($date1,$date2) ;
+        echo json_encode(["total" => (count($resultat1) + count($resultat2)), "resultat1" => count($resultat1), "resultat2" => count($resultat2)]) ;
     }
 }

@@ -170,7 +170,7 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                            
+
                                         </ul>
                                     </div>
                                 </div>
@@ -179,13 +179,139 @@
 
                             <!-- Expense Overview -->
                             <div class="col-md-6 col-lg-4 order-1 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header d-flex align-items-center justify-content-center pb-0">
+                                        <div class="card-title mb-0">
+                                            <h5 class="m-0 me-2">Connexion</h5>
+                                            <!-- <small class="text-muted">1000 utilisateurs</small> -->
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-center align-items-center mb-3">
+                                            <div class="d-flex flex-column align-items-center ">
+                                                <h2 class="mb-2 text-center" id="totalConnexion"><?php echo count($agent_fipu_connexion) + count($attache_connexion) ?></h2>
+                                                <span>Connexion(s)</span>
+                                            </div>
+                                            <!-- <div id="orderStatisticsChart"></div> -->
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                Debut
+                                                <input id="dateDebutConnexion" type="date" class="form-control">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                Fin
+                                                <input id="dateFinConnexion" type="date" class="form-control">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <br>
+                                                <a href="#" id="filtrerConnexion" class="btn btn-outline-primary">Filtrer</a>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <ul class="p-0 m-0">
+                                            <li class="d-flex mb-4 pb-1">
+                                                <div class="avatar flex-shrink-0 me-3">
+                                                    <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-mobile-alt"></i></span>
+                                                </div>
+                                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                                    <div class="me-2">
+                                                        <h6 class="mb-0">Attaché</h6>
+                                                        <!-- <small class="text-muted">Mobile, Earbuds, TV</small> -->
+                                                    </div>
+                                                    <div class="user-progress">
+                                                        <small class="fw-semibold" id="attacheConnexion"><?php echo count($attache_connexion); ?></small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex mb-4 pb-1">
+                                                <div class="avatar flex-shrink-0 me-3">
+                                                    <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                                                </div>
+                                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                                    <div class="me-2">
+                                                        <h6 class="mb-0">Finances publiques</h6>
+                                                        <!-- <small class="text-muted">T-shirt, Jeans, Shoes</small> -->
+                                                    </div>
+                                                    <div class="user-progress">
+                                                        <small class="fw-semibold" id="fipuConnexion"><?php echo count($agent_fipu_connexion); ?></small>
+                                                    </div>
+                                                </div>
+                                            </li>
 
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <!--/ Expense Overview -->
 
                             <!-- Transactions -->
                             <div class="col-md-6 col-lg-4 order-2 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header d-flex align-items-center justify-content-center pb-0">
+                                        <div class="card-title mb-0">
+                                            <h5 class="m-0 me-2">Compte créé</h5>
+                                            <!-- <small class="text-muted">1000 utilisateurs</small> -->
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-center align-items-center mb-3">
+                                            <div class="d-flex flex-column align-items-center ">
+                                                <h2 class="mb-2 text-center" id="totalCompte"><?php echo count($attache_compte) + count($agent_fipu_compte) ?></h2>
+                                                <span>Compte(s)</span>
+                                            </div>
+                                            <!-- <div id="orderStatisticsChart"></div> -->
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                Debut
+                                                <input id="dateDebutCompte" type="date" class="form-control">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                Fin
+                                                <input id="dateFinCompte" type="date" class="form-control">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <br>
+                                                <a href="#" id="filtrerCompte" class="btn btn-outline-primary">Filtrer</a>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <ul class="p-0 m-0">
+                                            <li class="d-flex mb-4 pb-1">
+                                                <div class="avatar flex-shrink-0 me-3">
+                                                    <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-mobile-alt"></i></span>
+                                                </div>
+                                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                                    <div class="me-2">
+                                                        <h6 class="mb-0">Attaché</h6>
+                                                        <!-- <small class="text-muted">Mobile, Earbuds, TV</small> -->
+                                                    </div>
+                                                    <div class="user-progress">
+                                                        <small class="fw-semibold" id="totalAttache"><?php echo count($attache_compte); ?></small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex mb-4 pb-1">
+                                                <div class="avatar flex-shrink-0 me-3">
+                                                    <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                                                </div>
+                                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                                    <div class="me-2">
+                                                        <h6 class="mb-0">Finances publiques</h6>
+                                                        <!-- <small class="text-muted">T-shirt, Jeans, Shoes</small> -->
+                                                    </div>
+                                                    <div class="user-progress">
+                                                        <small class="fw-semibold" id="totalFipu"><?php echo count($agent_fipu_compte); ?></small>
+                                                    </div>
+                                                </div>
+                                            </li>
 
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <!--/ Transactions -->
                         </div>
@@ -215,6 +341,50 @@
 
                     <!-- Page JS -->
                     <script src="<?= base_url(); ?>public/assets/js/dashboards-analytics.js"></script>
+
+                    <script>
+                        var url = '<?php echo base_url() ; ?>' ;
+                        $(document.body).on('click','#filtrerCompte',function() {
+                            var date1 = $("#dateDebutCompte").val() ;
+                            var date2 = $("#dateFinCompte").val() ;
+                            $.ajax({
+                                url: url+'Utilisateur/getCompteCree',
+                                type: 'post' ,
+                                data: {
+                                    'date1': date1 ,
+                                    'date2': date2 ,
+                                },
+                                dataType: 'json' ,
+                            })
+                            .done(function(data) {
+                                console.log(data) ;
+                                $("#totalCompte").text(data.total) ;
+                                $("#totalAttache").text(data.resultat2) ;
+                                $("#totalFipu").text(data.resultat1) ;
+                            })
+                        })
+
+                        $(document.body).on('click','#filtrerConnexion',function() {
+                            var date1 = $("#dateDebutConnexion").val() ;
+                            var date2 = $("#dateFinConnexion").val() ;
+                            $.ajax({
+                                url: url+'Utilisateur/getCompteConnexion',
+                                type: 'post' ,
+                                data: {
+                                    'date1': date1 ,
+                                    'date2': date2 ,
+                                },
+                                dataType: 'json' ,
+                            })
+                            .done(function(data) {
+                                console.log(data) ;
+                                $("#totalConnexion").text(data.total) ;
+                                $("#fipuConnexion").text(data.resultat1) ;
+                                $("#attacheConnexion").text(data.resultat2) ;
+                            })
+                        })
+
+                    </script>
 
 
 </body>
